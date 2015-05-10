@@ -1,0 +1,25 @@
+body{
+	margin: auto;
+	background: blue;
+}
+/*.lightbox{
+	width: 0;
+	height: 0;
+	box-shadow: 2px 2px 10px black;
+}
+
+.lightbox.current{
+	width: 70%;
+	height: 80%;
+}*/
+
+.fancybox-custom .fancybox-skin{
+	box-shadow: 0 0 50px #222;
+}
+
+#formulario{
+	width: 500px;
+	margin: auto; 
+	display: none;
+}
+

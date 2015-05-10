@@ -1,0 +1,24 @@
+#globos{
+	height: 400px;
+	padding: 15px;
+	width: auto;
+
+}
+.glb{
+	height: 400px;
+	float: left;
+	width: 250px;
+	padding: 10px;
+}
+
+.glb img{
+	border-radius: 250px;
+	height: 200px;
+	width: 250px;	
+
+}
+
+.glb ul li{
+	list-style: none;
+	text-decoration: none;
+}

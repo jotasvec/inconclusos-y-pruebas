@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>para Pruebas</title>
+	<link rel="stylesheet" href="estilo.css">
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="jquery-1.10.1.min.js"></script>
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	
+
+	<script type="text/javascript">
+				$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+		});
+	</script>
+</head>
+<body>
+	<div class="lightbox">
+		<a href="#formulario" class="fancybox" title="contacto">Hola</a>
+	</div>
+	<div id="formulario">
+		<form action="">
+			Nombre:<br>
+			<input type="text" class="cNombre" id="cNombre" placeholder="nombre contacto" > <br>
+			correo:<br>
+			<input type="text" class="cMail" id="cMail" placeholder="correo contacto" > <br>
+			Asunto:<br>
+			<input type="text" class="cAsunto" id="cAsunto" placeholder="asunto" > <br>
+			Mensaje:<br>
+			<textarea name="cMensaje" id="cMensaje" cols="30" rows="10"></textarea> <br>
+			<input type="submit" value="enviar" id="buttom" class="buttom" >
+		</form>
+	</div>
+</body>
+</html>

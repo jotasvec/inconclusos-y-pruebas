@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="shaktidmr.cl, empresa orientada para el desarrollo web y redes sociales">
+	<meta name="keywords" content="shakti, shakti redes sociales, shakti web, shakti diseño multimedia y redes sociales">
+    <meta name="author" content="Shakti">
+	<title>Shakti-Diseño multimedia y redes</title>
+	<!--muestra icono en tab navegador -->
+	<link rel="shortcut icon" href="img/shakti_logo.png">
+	<!--styles -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Andika|Pathway+Gothic+One|Indie+Flower|Belleza' rel='stylesheet' type='text/css'>
+	<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+
+	<!-- estilos slider -->
+	<link rel="stylesheet" type="text/css" href="css/style2.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom.css" />
+	<noscript>
+			<link rel="stylesheet" type="text/css" href="css/styleNoJS.css" />
+		</noscript>
+	<!--scripts -->
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<!--scripts.js -->
+
+
+	<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+    
+    <!-- Script Slider -->
+		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
+		<script type="text/javascript">	
+			$(function() {
+			
+
+
+				var Page = (function() {
+
+					var $nav = $( '#nav-dots > span' ),
+						slitslider = $( '#slider' ).slitslider( {
+							onBeforeChange : function( slide, pos ) {
+
+								$nav.removeClass( 'nav-dot-current' );
+								$nav.eq( pos ).addClass( 'nav-dot-current' );
+
+							}
+						} ),
+
+
+
+						init = function() {
+
+							initEvents();
+							
+						},
+						initEvents = function() {
+
+							$nav.each( function( i ) {
+							
+								$( this ).on( 'click', function( event ) {
+									
+									var $dot = $( this );
+									
+									if( !slitslider.isActive() ) {
+
+										$nav.removeClass( 'nav-dot-current' );
+										$dot.addClass( 'nav-dot-current' );
+									
+									}
+									
+									slitslider.jump( i + 1 );
+									return false;
+								
+								} );
+								
+							} );
+
+						};
+
+						return { init : init };
+
+				})();
+
+				Page.init();
+	
+			});
+		</script>
+
+</head>
+<body>
+	<div id="container">
+		<div id="cont-sup">
+			<div id="nav-sup">
+				<ul>
+					<li><a href="index.html">inicio</a></li>
+					<li><a href="aboutus.html">Quienes Somos</a></li>
+					<li><a href="contacto.html">Contacto</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="cont-cntr-about">
+			<div id="cont-cntr-up">
+				<div id="logo">
+					<h1>ShaktiDMR</h1>
+				</div>
+				<div id="slidershow">
+					<!-- SliderWrapper -->
+					<div id="slider" class="sl-slider-wrapper">
+
+						<div class="sl-slider">
+						
+							<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+								<div class="sl-slide-inner">
+									<div class="bg-img bg-img-1"></div>
+									<h2>A bene placito.</h2>
+									<blockquote><p>You have just dined, and however scrupulously the slaughterhouse is concealed in the graceful distance of miles, there is complicity.</p><cite>Ralph Waldo Emerson</cite></blockquote>
+								</div>
+							</div>
+							
+							<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+								<div class="sl-slide-inner">
+									<div class="bg-img bg-img-2"></div>
+									<h2>Regula aurea.</h2>
+									<blockquote><p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p><cite>Albert Schweitzer</cite></blockquote>
+								</div>
+							</div>
+							
+							<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+								<div class="sl-slide-inner">
+									<div class="bg-img bg-img-3"></div>
+									<h2>Dum spiro, spero.</h2>
+									<blockquote><p>Thousands of people who say they 'love' animals sit down once or twice a day to enjoy the flesh of creatures who have been utterly deprived of everything that could make their lives worth living and who endured the awful suffering and the terror of the abattoirs.</p><cite>Dame Jane Morris Goodall</cite></blockquote>
+								</div>
+							</div>
+							
+							<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
+								<div class="sl-slide-inner">
+									<div class="bg-img bg-img-4"></div>
+									<h2>Donna nobis pacem.</h2>
+									<blockquote><p>The human body has no more need for cows' milk than it does for dogs' milk, horses' milk, or giraffes' milk.</p><cite>Michael Klaper M.D.</cite></blockquote>
+								</div>
+							</div>
+							
+							<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
+								<div class="sl-slide-inner">
+									<div class="bg-img bg-img-5"></div>
+									<h2>Acta Non Verba.</h2>
+									<blockquote><p>I think if you want to eat more meat you should kill it yourself and eat it raw so that you are not blinded by the hypocrisy of having it processed for you.</p><cite>Margi Clarke</cite></blockquote>
+								</div>
+							</div>
+						</div><!-- /sl-slider -->
+				
+						<nav id="nav-dots" class="nav-dots">
+							<span class="nav-dot-current"></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</nav>
+					</div><!-- /slider-wrapper -->
+				</div><!--/slidershow -->
+			</div><!--/cont-cntr-up -->
+			<div class="descripcion">
+				
+				<div class="sob-nosotros">
+					<h1 class="titulo">Sobre Nosotros</h1>
+
+					<p>Somos un pequeño negocio y emprendimiento de jóvenes con vocación, creatividad y buena energía. Hemos nacido para satisfacer las necesidades marketeras que tengan las pequeñas y medianas empresas. Donde con un costo muy pequeño, puedan mostrarse de una mucho mejor manera en el mercado, y así, poder fidelizar y atraer potenciales clientes, mejorado significativamente los ingresos.</p>
+					<img src="img/portada1.jpg" alt="">
+				</div>
+				<div class="mis-vis">
+					<div class="mision">
+						<h2>Mision</h2>
+						<p> Satisfacer en su totalidad las necesidades del cliente, superando sus expectativas, con precios de mercado muy económicos.</p>
+					</div>
+					<div class="vision">
+						<h2>vision</h2>
+						<p>Ser una empresa lider a nivel nacional en servcios de Marketing on line y diseño. Siendo reconocidos a nivel de excelencia en nuestros servicios.</p>
+					</div>
+				</div>
+			</div><!--/descripcion -->
+
+				<div class="equipo-trabajo">
+					<div class="cont-columna">
+						<h2>Grupo de Trabajo</h2>
+						<div class="columna">
+							<img src="img/jotasvec.jpg" alt="">
+							<h3>Nombre Persona</h3>
+							<p class="data-user"></p>							
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, praesentium sint vel eligendi consectetur modi suscipit doloremque quisquam commodi nisi quibusdam sapiente a expedita officia voluptate corporis veritatis fuga.</p>
+						</div>
+						<div class="columna">
+							<img src="img/jotasvec.jpg" alt="">
+							<h3>Nombre Persona</h3>
+							<p class="data-user"></p>
+							<p>Dignissimos, illum, magnam consequuntur mollitia earum totam amet aliquam eligendi omnis aut ut fuga. Assumenda, earum ipsum aliquid quam laboriosam sint molestiae perspiciatis qui eum magnam laborum mollitia debitis accusamus.</p>
+						</div>
+						<div class="columna">
+							<img src="img/jotasvec.jpg" alt="">
+							<h3>Nombre Persona</h3>
+							<p class="data-user"></p>
+							<p>Incidunt, delectus, excepturi est explicabo minus vero tempora necessitatibus quidem cupiditate odio sunt dolores sit odit laborum debitis nihil labore blanditiis molestiae sint asperiores. Voluptatum, ducimus nulla maxime eaque commodi!</p>
+						</div>
+						<div class="columna">
+							<img src="img/jotasvec.jpg" alt="">
+							<h3>Nombre Persona</h3>
+							<p class="data-user"></p>
+							<p>Quos, deleniti, eum, consequuntur, quaerat fugit temporibus maiores dolorem illum alias sit repellat veritatis atque voluptate placeat voluptates enim ratione? Adipisci, ipsum magnam minima quos voluptate quibusdam quaerat et ratione.</p>
+						</div>
+					</div><!--/cont-columna -->
+				</div><!--/eqipo-trabajo -->
+			
+			
+		</div><!-- cont-cntr -->
+		<div id="cont-foot">
+			<div id="cont-footer">
+				<div class="foot-contact">
+					<h3>Contactanos</h3>
+					<ul>
+						<li>Correo : contacto@shaktidmr</li>
+						<li>Fono : +569 97452341</li>
+						<li><a href="contacto.html">M &aacute; s </a></li>
+					</ul>
+				</div><!-- /foot-contact-->
+				<div class="r-social">
+					<h3>#SIGUENOS</h3>
+					<ul>
+						<li><div class="r-facebook"><a href="#"><img src="img/facebook3.png"><p><b>Facebook</b></p></a></div></li>
+						<li><div class="r-twitter"><a href="#"><img src="img/twitter3.png"><p><b>Twiter</b></p></a></div></li>
+					</ul>
+				</div><!--/r-social -->
+			</div><!--/cont-footer -->
+		</div><!--/cont-foot -->
+	</div><!--/container -->
+	
+</body>
+</html>
+
+	

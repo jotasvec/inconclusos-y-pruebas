@@ -1,0 +1,17 @@
+
+Jquerys pluggins
+
+BgSwitcher (fondo en movimiento)
+http://rewish.github.io/jquery-bgswitcher/
+
+LightBox
+http://visuallightbox.com/jquery-image-lightbox.html
+
+MagnificPopUp
+http://dimsemenov.com/plugins/magnific-popup/
+
+Slider que muestra Productos
+http://www.ajaxshake.com/es/JS/2410221/slider-jquery-para-mostrar-productos-slider.html
+
+otro sitio de interes
+http://www.ajaxshake.com/es/JS/12261/lightbox-fotos.html

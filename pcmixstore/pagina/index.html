@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>PCMIX Store</title>
+	<!-- meta -->
+	<meta name="description" content="pcmixstore.cl, pagina diseñada para el local comercial ubicado en el metro universidad de chile, local 4">
+	<meta name="keywords" content="pcmix, PCMIX, pcmixstore, PCMIXSTORE, pcmixstore.cl, informatica, computacion, santiago centro, metro Ude chile">
+	<!--css's -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styleTabs.css"> 
+
+	<!--lyrics -->
+	<link href='http://fonts.googleapis.com/css?family=Sirin+Stencil|Cinzel+Decorative|Montserrat+Subrayada' rel='stylesheet' type='text/css'>
+	<!--script's -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/contacto.js"></script>
+	<script type="text/javascript" src="js/cycle.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.slideshow').cycle({
+   				 fx:      'scrollLeft', 
+   				 next:   '#left', 
+    			timeout:  1000, 
+    			
+
+			});
+		});
+
+	</script><!--fin slider -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQzMMw8p1lUoytXAiiBoe5Nn7095D3clI &sensor=true"></script>
+    <script>
+		var map;
+		var TILE_SIZE = 256;
+		var santiago = new google.maps.LatLng(-33.44375, -70.650344);
+
+		function bound(value, opt_min, opt_max) {
+		  if (opt_min != null) value = Math.max(value, opt_min);
+		  if (opt_max != null) value = Math.min(value, opt_max);
+		  return value;
+		}
+
+		function degreesToRadians(deg) {
+		  return deg * (Math.PI / 180);
+		}
+
+		function radiansToDegrees(rad) {
+		  return rad / (Math.PI / 180);
+		}
+
+		/** @constructor */
+		function MercatorProjection() {
+		  this.pixelOrigin_ = new google.maps.Point(TILE_SIZE / 2,
+		      TILE_SIZE / 2);
+		  this.pixelsPerLonDegree_ = TILE_SIZE / 360;
+		  this.pixelsPerLonRadian_ = TILE_SIZE / (2 * Math.PI);
+		}
+
+		MercatorProjection.prototype.fromLatLngToPoint = function(latLng,
+		    opt_point) {
+		  var me = this;
+		  var point = opt_point || new google.maps.Point(0, 0);
+		  var origin = me.pixelOrigin_;
+
+		  point.x = origin.x + latLng.lng() * me.pixelsPerLonDegree_;
+
+		  // NOTE(appleton): Truncating to 0.9999 effectively limits latitude to
+		  // 89.189.  This is about a third of a tile past the edge of the world
+		  // tile.
+		  var siny = bound(Math.sin(degreesToRadians(latLng.lat())), -0.9999,
+		      0.9999);
+		  point.y = origin.y + 0.5 * Math.log((1 + siny) / (1 - siny)) *
+		      -me.pixelsPerLonRadian_;
+		  return point;
+		};
+
+		MercatorProjection.prototype.fromPointToLatLng = function(point) {
+		  var me = this;
+		  var origin = me.pixelOrigin_;
+		  var lng = (point.x - origin.x) / me.pixelsPerLonDegree_;
+		  var latRadians = (point.y - origin.y) / -me.pixelsPerLonRadian_;
+		  var lat = radiansToDegrees(2 * Math.atan(Math.exp(latRadians)) -
+		      Math.PI / 2);
+		  return new google.maps.LatLng(lat, lng);
+		};
+
+		function createInfoWindowContent() {
+		  var numTiles = 1 << map.getZoom();
+		  var projection = new MercatorProjection();
+		  var worldCoordinate = projection.fromLatLngToPoint(santiago);
+		  var pixelCoordinate = new google.maps.Point(
+		      worldCoordinate.x * numTiles,
+		      worldCoordinate.y * numTiles);
+		  var tileCoordinate = new google.maps.Point(
+		      Math.floor(pixelCoordinate.x / TILE_SIZE),
+		      Math.floor(pixelCoordinate.y / TILE_SIZE));
+
+		  return [
+		    'Estaci&oacute;n Metro Universidad de Chile',
+		    'Local 4, Salida Paseo Ahumada',
+		    'Santiago centro, Santiago, RM, Chile ',
+		    'Coordenadas: ' + tileCoordinate.x + ' , ' +
+		      tileCoordinate.y + ' Nivel de Zoom : ' + map.getZoom()
+		  ].join('<br>');
+		}
+
+		function initialize() {
+		  var mapOptions = {
+		    zoom: 17,
+		    center: santiago,
+		    mapTypeId: google.maps.MapTypeId.ROADMAP
+		  };
+
+		  map = new google.maps.Map(document.getElementById('map-canvas'),
+		      mapOptions);
+
+		  var coordInfoWindow = new google.maps.InfoWindow();
+		  coordInfoWindow.setContent(createInfoWindowContent());
+		  coordInfoWindow.setPosition(santiago);
+		  coordInfoWindow.open(map);
+
+		  google.maps.event.addListener(map, 'zoom_changed', function() {
+		    coordInfoWindow.setContent(createInfoWindowContent());
+		    coordInfoWindow.open(map);
+		  });
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+<body>
+	<!--header homepage -->
+	<div id="contenedor">
+			<div id="contSuperior">
+				<div id="titulo">
+					<a href="index.html"><h1>PcMix Store</h1> </a>
+				</div><!--titulo -->
+				<div id="navigation">
+					<ul>
+						<li><a href="#home"> Home </a></li>
+						<li><a href="#mapa"> visitanos </a></li>
+						<li><a href="#formulario"> Contacto </a></li>					
+						<li><a href="#"> <img src="images/Facebook1.png"> </a></li>
+						<li><a href="#"> <img src="images/Twitter1.png"></a></li>
+					</ul>
+				</div><!--navegador -->
+			</div><!--contSuperior -->		
+		<div id="container">
+			<div id="home">
+				<div id="contenido">
+					<div class="slideshow">
+						<img src="images/img1.jpeg" height="300" width="800">
+						<img src="images/img2.jpg" height="300" width="800">
+						<img src="images/img3.gif" height="300" width="800">
+
+					</div><!--eof slider -->
+
+					
+					<div id="globos">
+						<div class="glb">
+							<!-- insumos computacionales -->
+							<h3>Insumos</h3>
+							<img src="images/insumos.png">
+							<p>Ven y descubre todos los productos e insumos para tu computadora de escritorio o portatil, descubre la variedades de <b>OFERTAS</b>
+							que tenemos para ti! </p>
+						</div>
+						<div class="glb">
+							<!-- gamers -->
+							<h3>Gamers</h3>
+							<img src="images/gamers.png">
+							<p>Si eres de los que te vuelves loco jugando y quieres avanzar cada dia mas en este mundo de consolas, computadores y juegos, ven y descubre los diferentes productos para gamers que tenemos para ti!</p>
+							<u>
+								<li>Gamers Pc</li>
+								<li>Gamer Play Station3</li>
+								<li>Gamer Xbox360</li>
+								<li>Gamer Nintendo WII</li>
+							</u>
+
+						</div>
+						<div class="glb">
+							<!-- celulares -->
+							<h3>Todo Smarth</h3>
+							<img src="images/smarth_os.png">
+							<p>si te facinan las nuevas tecnologias, y quieres darle estilo a tus gadgets, protegerlos e ir innovando cada dia y mostrar la diferencia entre tus amigos, ven a ponerle tu personalidad a tus smarthphone's, tablets, ipad y ponete a la vanguardia</p>
+							<u>
+								<li>IPhone / Ipad</li>
+								<li>SmarthPhone's / Tablet's</li>
+							</u>							
+
+						</div>
+					</div>	<!--globos -->
+				</div><!--contenido-->			
+			</div><!--home -->
+
+			<div id="contacto">
+				<h2>Visitanos</h2>
+				<div id="mapa">
+					<div id="map-canvas"/>
+				</div><!--mapa -->
+				<h2>Contacto</h2>
+				<div id="formulario">
+					<form  method="POST" id="form" action="enviar.php" onsubmit = "return validaFormulario()" >
+						<div id="errores">Debes llenar todos los campos</div> <!-- muestra el mensaje si no se llenan los campos -->
+						<label>Nombre: </label><br>
+						<input type="text" id="fNombre" class="nombre" name="fNombre" placeholder="ingresar nombre"></br>
+						<label>Email: </label><br>
+						<input type="email" id="fEmail" class="email" name="fEmail" placeholder="ingresar email"></br>
+						<label>Asunto: </label><br>
+						<input type="text" id="fAsunto" class="asunto" name="fAsunto" placeholder="ingresar asunto"></br>
+						<label>Mensaje: </label></br>
+						<textarea  id="fMensaje" class="mensaje" name="fMensaje" placeholder="ingrese un mensaje, una consulta y contactenos" cols="30" rows="10"></textarea></br>
+						<input type="submit" value="enviar formulario" class="buttom" id="buttom" name="buttom" />
+					</form>
+				</div>
+			</div><!--eof contacto -->
+		</div><!--eof container -->
+		
+		<footer>
+			<div id="info">
+				<h3>Sobre Nosotros</h3>
+				<p>PcMix Store es una local comercial  con mas de 10 años de experiencia en el rubro marcando tendencia tecnológica. Queremos otorgar los artículos tecnológicos que la gente  quiere y necesita, dandoles una gran satisfacción a los clientes a través de una asesoría cercana por medio de nuestras vendedoras, ofreciendo la más amplia variedad de productos y a los mejores precios.</p>
+			</div>
+			<div id="social_net">
+				<h3>Siguenos</h3>
+				<ul>
+					<li><div class="facebook"><a href="#"><img src="images/facebook3.png"><p><b>Facebook</b></p></a></div></li>
+					<li><div class="twitter"><a href="#"><img src="images/twitter3.png"><p><b>Twiter</b></p></a></div></li>
+				</ul>
+			</div>
+		</footer>
+		<div id="pie">
+				<p>pagina hecha por jota svec | para PcMixStore</p>
+		</div><!--pie -->
+	</div>
+</body>
+</html>

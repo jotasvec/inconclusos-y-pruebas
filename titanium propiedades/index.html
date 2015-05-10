@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="propiedades coquimbo, la serena">
+    <meta name="author" content="jota-svec">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" >
+    <link rel="stylesheet" href="css/style.css">
+    <title>Titanium Propiedades</title>
+    <!-[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-[if gte IE 9]>
+        <style type="text/css">
+        .gradient {
+       filter: none;
+    }
+    </style>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style-feature-list.css">
+    <link rel="stylesheet" type="text/css" href="css/button.css">
+
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.featureList-1.0.0.js"></script>
+    <!-- feature list scritp -->
+    <script language="javascript">
+        $(document).ready(function() {
+
+            $.featureList(
+                $("#tabs li a"),
+                $("#output li"), {
+                    start_item  :   1
+                }
+            );
+
+            /*
+            
+            // Alternative
+
+            
+            $('#tabs li a').featureList({
+                output          :   '#output li',
+                start_item      :   1
+            });
+
+            */
+
+        });
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="superior"><!--barra superior -->
+            <div class="logo">
+                <a href="#"><h1>Titanium Propiedades</h1></a>
+            </div>
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Sitios de Inter&eacute;s</a></li>
+                    <li><a href="#">Contactenos</a></li>
+                    <li><a href="#"></a></li>
+
+                </ul>
+            </div>
+            <div class="idiom-bar">
+                <ul>
+                    <!-- idioma español -->
+                    <li><a href="#">Es</a></li>
+                    <!-- idioma ingles -->
+                    <li><a href="#">En</a></li>
+                    <!-- idioma aleman -->
+                    <li><a href="#">Gr</a></li>
+                </ul>
+            </div>
+        </div>   
+        <div class="center"><!--cuerpo -->
+            <div class="supra-center">
+                <div class="buscador">
+                    <fieldset>
+                    <legend><h3>Encuentre su propiedad</h3></legend>
+                    <div class="form">
+                        <form method="POST" id="formulario" action="" onsubmit="">
+                            <!-- tipo de propiedad -->
+                            <label>Tipo de Propiedad:</label>
+                            <select name="tipo_prop" class="tipo_prop" id="tipo_prop"><br>
+                                <option selected="selected">seleccione</option>
+                                <option>Casa</option>
+                                <option>Departamento</option>       
+                                <option>Terreno</option>        
+                            </select>
+                            <select name="tipo_prop" class="tipo_prop" id="tipo_prop"><br>
+                                <option selected="selected">nuevas</option>
+                                <option>usadas</option>       
+                                <option>nuevas y usadas</option>        
+                            </select><br>
+                            <!-- region donde se encuentra -->
+                            <label>Regi&oacute;n:</label>
+                            <select name="region_prop" class="region_prop" id="region_prop">
+                                <option selected="selected">seleccione</option>
+                                <option>Arica Parinacota</option>
+                                <option>Tarapac&aacute;</option>
+                                <option>Antofagasta</option>
+                                <option>Atacama</option>
+                                <option>Coquimbo </option>
+                                <option>Valparaiso</option>
+                                <option>Region Metropolitana</option>
+                                <option>O'higgins</option>
+                                <option>Maule</option>
+                                <option>Bio Bio</option>
+                                <option>Araucania</option>
+                                <option>Los Lagos</option>
+                                <option>Los Rios</option>
+                                <option>Aysen</option>
+                                <option>Magallanes</option>
+                            </select><br>
+                            <label>Busca propiedades:</label><br>
+                            <input type="radio" name="busca-prop" value="venta"> En Venta <br>
+                            <input type="radio" name="busca-prop" value="arriendo"> En Arriendo <br>
+                            <input type="radio" name="busca-prop" value="ambos"> Ambos 
+                            <button type="submit" class="boton azul formaBoton" > Buscar </button>
+
+
+                        </form>
+                    </div>
+                    </fieldset>
+                </div>
+                <div class="slider">
+                    <!-- sliders feature list -->
+                    <div id="feature_list">
+                        <ul id="tabs">
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="img/corporate.png" />
+                                    <h3>Servicio</h3>
+                                    <span>Cont&aacute;ctenos y conozca nuestros servicios</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="img/house.png" />
+                                    <h3>Propiedades</h3>
+                                    <span>Vea las propiedades que tenemos para usted</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <img src="img/programming.png" />
+                                    <h3>Publique con Nosotros</h3>
+                                    <span>Si quiere Vender o arrendar su propiedad no espere ma&aacute;s</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul id="output">
+                            <li>
+                                <img src="img/servicios-.jpg" />
+                                <a href="#">See project details</a>
+                            </li>
+                            <li>
+                                <img src="img/casa2.jpeg" />
+                                <a href="#">See project details</a>
+                            </li>
+                            <li>
+                                <img src="img/confiabilidad.jpg" />
+                                <a href="#">See project details</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="lista-prod">
+                <div class="muestra-prod">
+                    <h3>casa1</h3>
+                    <div class="img">
+                        <img src="images/incognito1.jpg">
+                    </div>
+                    
+                    <p class="descripcion">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                   </p>   
+                   <p class="precio">
+                        $xxxxxx
+                   </p>
+                </div>
+                   <div class="muestra-prod">
+                    <h3>casa2</h3>
+                    <div class="img">
+                        <img src="images/incognito1.jpg">
+                    </div>
+                    
+                    <p class="descripcion">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                   </p>   
+                   <p class="precio">
+                        $xxxxxx
+                   </p>
+                </div>
+                   <div class="muestra-prod">
+                    <h3>casa3</h3>
+                    <div class="img">
+                        <img src="images/incognito1.jpg">
+                    </div>
+                    
+                    <p class="descripcion">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    </p>    
+                   <p class="precio">
+                        $xxxxxx
+                   </p>
+                </div>
+                   <div class="muestra-prod">
+                    <h3>casa4</h3>
+                    <div class="img">
+                        <img src="images/incognito1.jpg">
+                    </div>
+                    
+                    <p class="descripcion">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        
+                   </p>   
+                   <p class="precio">
+                        $xxxxxx
+                   </p>
+                </div>
+                   <div class="muestra-prod">
+                    <h3>casa5</h3>
+                    <div class="img">
+                        <img src="images/incognito1.jpg">
+                    </div>
+                    
+                    <p class="descripcion">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                   </p>   
+                   <p class="precio">
+                        $xxxxxx
+                   </p>
+                </div>
+                   <div class="muestra-prod">
+                    <h3>casa6</h3>
+                    <div class="img">
+                        <img src="images/incognito1.jpg">
+                    </div>
+                    
+                    <p class="descripcion">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                   </p>   
+                   <p class="precio">
+                        $xxxxxx
+                   </p>
+                </div>
+            </div>  
+
+            <div class="about-us">
+               <!--buscador de casas -->
+               <h3>Titanium Propiedades</h3>
+               <p>
+                La forma simple de comprar o arrendar su casa o departamento en La Serena y Coquimbo
+                Si está buscando una manera rápida y fácil para encontrar una casa o simplemente revisar nuestra oferta de casas y departamentos en venta o arriendo , está en el lugar correcto.
+                Todas nuestras propiedades son publicadas previo acuerdo y contrato con sus propietarios proporcionando información precisa, actualizada y confiable de cada casa o departamento en venta o arriendo en la Cuarta Region.
+                Si está pensando en vender o comprar su casa, contáctese con nosotros, nos hacemos cargo de todo desde su publicacion, tasación y todo lo necesario para una compra-venta exitosa
+                Somos expertos en el mercado local, tenemos en cuenta las características, barrios y zonas para asesorar y recomendar la mejor propiedad en La Serena y Coquimbo considerando sus necesidades y verificando en terreno cada dato publicado.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <!--footer -->
+            <div class="footer-sup">
+                <h1>Contactenos</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="footer-inf">
+                pagina Web creada por jota svec
+            </div>
+        </div>
+    </div>
+</body>
+</html>

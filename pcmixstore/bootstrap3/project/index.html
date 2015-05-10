@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PcMix Store on bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- Bootstrap -->
+    <script src="js/jquery.js"></script>
+    <script src="holder/holder.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">    
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body> 
+    <div class="container">
+      
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">PcMixStore</a>
+        </div>
+      
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li ><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+      <!--slide carousel -->
+      <div class="slide-carousel">
+        <div id="home-carousel" class="carousel slide" data-ride="carousel">
+          <!-- inicia carousel -->
+          <!--indicadores o puntitos -->
+          <ol class="carousel-indicators">
+            <li data-target="#home-carousel" data-slide-to="0" class="active"></li> 
+            <li data-target="#home-carousel" data-slide-to="1"></li>
+            <li data-target="#home-carousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <!-- insertamos imagen --> 
+            <div class="item active">
+              <img src="img/img1.jpg" alt="slide1">
+              <div class="carousel-caption">
+                  <h3>Bienvenido a PcMixStore</h3>
+                  <p> hola hola</p>
+              </div><!-- /carousel caption -->
+            </div> <!-- /item active -->
+
+            <!-- insertamos imagen --> 
+            <div class="item">
+              <img src="img/img2.jpg" alt="slide2">
+              <div class="carousel-caption">
+                <p>hola img2</p>
+              </div>
+            </div><!-- insertamos imagen --> 
+            <div class="item">
+              <img src="img/img3.gif" alt="slide3">
+              <div class="carousel-caption">
+                <p>hola img3</p>
+              </div>
+            </div>
+          </div> <!-- / carousel inner-->
+          <!-- Controls -->
+          <a class="left carousel-control" href="#home-carousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#home-carousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+          
+        </div> <!--/carousel -->
+      </div><!-- /slide-carousel -->
+      
+      <!-- thumbnails-->
+      <div class="row row-thumbnail">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="holder.js/250x250/lava/text:juegos" alt="juegos" class="img-circle">
+            <div class="caption">
+              <h3>juegos</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quisquam, illo, quibusdam placeat a voluptatibus voluptas eveniet aliquam eligendi porro perspiciatis reprehenderit dolor cumque eos possimus! Eos, dicta sequi architecto?</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+            </div><!--caption -->
+          </div><!-- /thumbnail -->
+        </div><!-- /span3 -->
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="holder.js/250x250/sky/text:Smartphones" alt="" class="img-circle">
+            <div class="caption">
+              <h3>Todo Smart</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quisquam, illo, quibusdam placeat a voluptatibus voluptas eveniet aliquam eligendi porro perspiciatis reprehenderit dolor cumque eos possimus! Eos, dicta sequi architecto?</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+            </div><!--caption -->
+          </div><!-- /thumbnail -->
+        </div><!-- /span3 -->
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="holder.js/250x250/vine/text:Accesorios" alt="" class="img-circle">
+            <div class="caption">
+              <h3>Accesorios</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, quisquam, illo, quibusdam placeat a voluptatibus voluptas eveniet aliquam eligendi porro perspiciatis reprehenderit dolor cumque eos possimus! Eos, dicta sequi architecto?</p>
+              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+            </div><!--caption -->
+          </div><!-- /thumbnail -->
+        </div><!-- /span3 -->
+      </div><!-- /row-thumbnail -->
+    </div> <!-- /container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.carousel').carousel();
+      }); //end document.ready
+    </script>
+  </body>
+</html>

@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="shaktidmr.cl, empresa orientada para el desarrollo web y redes sociales">
+	<meta name="keywords" content="shakti, shakti redes sociales, shakti web, shakti diseño multimedia y redes sociales">
+    <meta name="author" content="Shakti">
+	<title>Shakti-Diseño multimedia y redes</title>
+	<!--muestra icono en tab navegador -->
+	<link rel="shortcut icon" href="img/shakti_logo.png">
+	<!--styles -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Andika|Pathway+Gothic+One|Indie+Flower|Belleza' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Candal|Akronim|Ribeye+Marrow' rel='stylesheet' type='text/css'>
+	<!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+
+	<!-- estilos slider -->
+	<link rel="stylesheet" type="text/css" href="css/style2.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom.css" />
+	<noscript>
+			<link rel="stylesheet" type="text/css" href="css/styleNoJS.css" />
+		</noscript>
+	<!--scripts -->
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<!--scripts.js -->
+	<script type="text/javascript" src="js/scripts.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+	<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+	<!-- The JavaScript portafolio --> 
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'elastic',
+				closeEffect : 'elastic',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				openEffect  : 'elastic',
+				closeEffect : 'elastic',
+
+				prevEffect : 'fade',
+				nextEffect : 'fade',
+
+				closeBtn  : true,
+				arrows    : true,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 70,
+						height : 70
+					},
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(0,0,0,0.5)'
+						}
+					}
+				}
+			});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+    
+    <!-- Script Slider -->
+		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
+		<script type="text/javascript">	
+			$(function() {
+			
+
+
+				var Page = (function() {
+
+					var $nav = $( '#nav-dots > span' ),
+						slitslider = $( '#slider' ).slitslider( {
+							onBeforeChange : function( slide, pos ) {
+
+								$nav.removeClass( 'nav-dot-current' );
+								$nav.eq( pos ).addClass( 'nav-dot-current' );
+
+							}
+						} ),
+
+
+
+						init = function() {
+
+							initEvents();
+							
+						},
+						initEvents = function() {
+
+							$nav.each( function( i ) {
+							
+								$( this ).on( 'click', function( event ) {
+									
+									var $dot = $( this );
+									
+									if( !slitslider.isActive() ) {
+
+										$nav.removeClass( 'nav-dot-current' );
+										$dot.addClass( 'nav-dot-current' );
+									
+									}
+									
+									slitslider.jump( i + 1 );
+									return false;
+								
+								} );
+								
+							} );
+
+						};
+
+						return { init : init };
+
+				})();
+
+				Page.init();
+	
+			});
+		</script>
+	<!-- Mover menu -->
+	<script type="text/javascript">	
+		posicionarMenu();
+		$(window).scroll(function(){
+			posicionarMenu();
+		});
+		function posicionarMenu(){
+			var altura = $('#cont-cntr-up').outerHeight(true); //offset().bottom;
+			var altura_menu = $('.menu').outerHeight(true);
+
+			if($(window).scrollTop() >= altura ){
+				$('.menu').addClass('fixed');
+			} else{
+				$('.menu').removeClass('fixed');
+			}
+
+		} 
+	</script>
+
+</head>
+<body>
+	<div id="container">
+		<div id="cont-sup">
+			<div id="nav-sup">
+				<ul>
+					<li><a href="index.html">inicio</a></li>
+					<li><a href="aboutus.html">Quienes Somos</a></li>
+					<li><a href="contacto.html">Contacto</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="cont-cntr">
+			<div id="cont-cntr-up">
+				<div id="logo">
+					<h1>ShaktiDMR</h1>
+				</div>
+				<div id="slidershow">
+					<!-- SliderWrapper -->
+					<div id="slider" class="sl-slider-wrapper">
+
+				<div class="sl-slider">
+				
+					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-1"></div>
+							<h2>A bene placito.</h2>
+							<blockquote><p>You have just dined, and however scrupulously the slaughterhouse is concealed in the graceful distance of miles, there is complicity.</p><cite>Ralph Waldo Emerson</cite></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-2"></div>
+							<h2>Regula aurea.</h2>
+							<blockquote><p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p><cite>Albert Schweitzer</cite></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-3"></div>
+							<h2>Dum spiro, spero.</h2>
+							<blockquote><p>Thousands of people who say they 'love' animals sit down once or twice a day to enjoy the flesh of creatures who have been utterly deprived of everything that could make their lives worth living and who endured the awful suffering and the terror of the abattoirs.</p><cite>Dame Jane Morris Goodall</cite></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-4"></div>
+							<h2>Donna nobis pacem.</h2>
+							<blockquote><p>The human body has no more need for cows' milk than it does for dogs' milk, horses' milk, or giraffes' milk.</p><cite>Michael Klaper M.D.</cite></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-5"></div>
+							<h2>Acta Non Verba.</h2>
+							<blockquote><p>I think if you want to eat more meat you should kill it yourself and eat it raw so that you are not blinded by the hypocrisy of having it processed for you.</p><cite>Margi Clarke</cite></blockquote>
+						</div>
+					</div>
+				</div><!-- /sl-slider -->
+				
+				<nav id="nav-dots" class="nav-dots">
+					<span class="nav-dot-current"></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</nav>
+
+			</div><!-- /slider-wrapper -->
+					<!-- /SliderWrapper -->
+
+				</div>
+			</div>
+			<div id="cont-cntr-left">
+				<div class="menu">
+					<ul>
+						<li><a href="#cont-cntr-right">Inicio</a></li>
+						<li><a href=".servicios">Servicios</a></li>
+						<li><a href=".portafolio">Portafolios</a></li>
+						<li><a href="#cont-foot">mas</a></li>
+
+					</ul>
+				</div>
+			</div>
+			<div id="cont-cntr-right">
+				<div class="cont-cntr-right-top">
+					<h1>Shakti</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, accusantium at nihil aliquam. Impedit, iure, mollitia, incidunt, fugit fuga aut dolorum qui ratione totam vero natus laudantium consequuntur. Minima, natus.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, numquam, rem, fugit alias accusantium ea quam provident impedit suscipit rerum enim veritatis doloremque deleniti sunt maxime sit aperiam nostrum. Placeat.</p>
+				</div>
+				<div class="servicios">
+					<h1>Servicios</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, hic, id, dolor quod sequi dicta accusamus molestiae explicabo labore doloribus corrupti itaque dolores praesentium temporibus quasi nihil consequuntur ea quas?</p>
+					<div class="cont-columnas">
+						<div class="columna">
+							<h2>Web</h2>
+							<img src="img/navegadores.png" alt="">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur labore consequuntur laborum dignissimos maxime illo quos iusto molestias rem quibusdam! Natus, facilis eum ipsum hic rerum quisquam similique temporibus sunt.</p>
+							<ul>
+								<li>Diseño Web</li>
+								<li>Community Manager-Redes Sociales</li>
+								<li>Planes Empresas</li>
+								<li>A tu medida</li>
+							</ul>
+						</div>
+						<div class="columna">
+							<h2>Multimedia</h2>
+							<img src="img/multimedia.png" alt="">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, enim, beatae, vero, illum cum voluptatem eum non unde vitae veritatis ipsam voluptatibus ducimus deleniti hic voluptatum aut facilis iure nesciunt.</p>					
+							<ul>
+								<li>imagenes</li>
+								<li>Videos</li>
+								<li>fotos</li>
+								<li>musica</li>
+							</ul>
+						</div>
+						<div class="columna">
+							<h2>Publicidad</h2>
+							<img src="img/publicidad1.jpg" alt="">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, voluptate, aliquid provident distinctio repellendus officiis ab cumque repellat iure aliquam laborum esse omnis hic consectetur atque illum tempora voluptatum explicabo?</p>
+							<ul>
+								<li>propaganda</li>
+								<li>flayers</li>
+								<li>Imagen corportiva</li>
+								<li>Diseño Editorial</li>
+							</ul>
+						</div>
+					</div><!-- eof cont-columnas -->
+				</div><!-- eof servicios -->
+
+				<!--inicio portafolio -->
+				<div class="portafolio">
+					<h1>Nuestros trabajos</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, asperiores, voluptates, veniam, aperiam beatae corporis eos ea voluptatum non quis consequatur possimus vitae error iste itaque fugit molestiae ab reprehenderit!</p>
+					
+					<!-- muestra de sitios -->
+					<section>
+						<header>
+							<h2>Portafolio</h2>
+						</header>
+						<ul class="project-list">
+							<li>
+								<figure><a class="fancybox-thumbs" data-fancybox-group="thumb" title="productora inercia" href="img/portafolio/productorainercia.PNG"><img src="img/portafolio/productorainercia.PNG" alt=""></a></figure>
+							</li>
+							<li>
+								<figure><a class="fancybox-thumbs" data-fancybox-group="thumb" title="centro de eventos palilulandia" href="img/portafolio/palilulandia.PNG"><img src="img/portafolio/palilulandia.PNG" alt=""></a></figure>
+							</li>
+							<li>
+								<figure><a class="fancybox-thumbs" data-fancybox-group="thumb" title="duo musical dama" href="img/portafolio/duodama.PNG"><img src="img/portafolio/duodama.PNG" alt=""></a></figure>
+							</li>
+							<li>
+								<figure><a class="fancybox-thumbs" data-fancybox-group="thumb" title="centro de terapias alternativas Ajna Om" href="img/portafolio/ajnaom.PNG"><img src="img/portafolio/ajnaom.PNG" alt=""></a></figure>
+							</li>
+						</ul>
+					</section>	
+					<div class="holding">
+						<h1>Empresas</h1>
+						<p>ShaktiDmr no solo ofrece servicios de creacion y diseño web a las empresas si nó que tambien se puede encargar de gestionar y trabajar las redes sociales orientadolas a brindar un mejor servicio y contacto en relacion empresa-cliente </p>
+						<table>
+							<tr>
+								<td><a href="https://www.facebook.com/inerciapro" target="_blank"><img src="img/logos empresas/Logo_Inercia.png"  alt=""></a></td>
+								<td><a href="https://www.facebook.com/smartzone.chile" target="_blank" ><img src="img/logos empresas/Logo_SmartZone.png"  alt=""></a></td>
+								<td><a href="https://www.facebook.com/AjnaOm" target="_blank" ><img src="img/logos empresas/logo_AJNA OM.png"  alt=""></a></td>
+								<td><a href="https://www.facebook.com/Artipel" target="_blank" ><img src="img/logos empresas/logo_artipel.png"  alt=""></a></td>
+								<td><a href="https://www.facebook.com/luismezza" target="_blank" ><img src="img/logos empresas/Logo_instituto_luis_meza.png"  alt=""></a></td>
+							</tr>
+							<tr>
+								<td><a href="https://www.facebook.com/EnergiaPilatesChile" target="_blank" ><img src="img/logos empresas/logo_energia-pilates.png"  alt=""></a></td>
+								<td><a href="https://www.facebook.com/planetaideal" target="_blank" ><img src="img/logos empresas/Logo_Planeta-Ideal.png"  alt=""></a></td>
+								<td><a href="https://www.facebook.com/almasdeluz" target="_blank" ><img src="img/logos empresas/logo_Almas-de-Luz.png"  alt=""></a></td>
+								<td><a href="https://www.facebook.com/grupomagisteriochile" target="_blank" ><img src="img/logos empresas/logo_GrupoMagisterio.png"  alt=""></a></td>
+								<td><a href="https://www.facebook.com/asyouwish.chile" target="_blank" ><img src="img/logos empresas/Logo_AS_YOU_WISH.png"  alt=""></a></td>
+							</tr>
+						</table>
+					</div><!-- /holding -->
+				</div><!-- portafolio -->
+				
+			</div><!--/ cont-cntr-right -->
+		</div><!-- cont-cntr -->
+		<div id="cont-foot">
+			<div id="cont-footer">
+				<div class="foot-contact">
+					<h3>Contactanos</h3>
+					<ul>
+						<li>Correo : contacto@shaktidmr</li>
+						<li>Fono : +569 97452341</li>
+						<li><a href="contacto.html">M &aacute; s </a></li>
+					</ul>
+				</div><!-- /foot-contact-->
+				<div class="r-social">
+					<h3>#SIGUENOS</h3>
+					<ul>
+						<li><div class="r-facebook"><a href="#"><img src="img/facebook3.png"><p><b>Facebook</b></p></a></div></li>
+						<li><div class="r-twitter"><a href="#"><img src="img/twitter3.png"><p><b>Twiter</b></p></a></div></li>
+					</ul>
+				</div><!--/r-social -->
+			</div><!--/cont-footer -->
+		</div><!--/cont-foot -->
+	</div><!--/container -->
+</body>
+</html>
+
+	
