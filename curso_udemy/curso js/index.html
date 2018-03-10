@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aprendiendo JS</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px&amp;subset=latin-ext" rel="stylesheet"> 
+</head>
+<body>
+
+    <!-- se crea un formulario de registro -->
+    <!-- practica crendo un formulario y validando html/css/js seccion 9 clase 126-->
+<div class="container">    
+    <form action="" class="formulario" name="formulario" id="formulario">
+        <div class="container-inputs">
+            <input type="text" name="nombre" class="nombre" placeholder="nombre">
+            <input type="email" name="correo" class="correo" placeholder="correo">
+            
+            <div class="sexo">
+                <input type="radio" name="sexo" id="hombre" class="hombre" value="Hombre"/>
+                <label class="label-radio hombre" for="hombre">Hombre </label>
+                <input type="radio" name="sexo" id="mujer" class="mujer" value="Mujer">
+                <label class="label-radio mujer" for="mujer">Mujer </label>
+                
+            </div>
+            
+            <div class="terminos">
+                <input type="checkbox" name="terminos" id="terminos">
+                <label for="terminos">Acepto terminos y condiciones</label>
+            </div>
+
+            <ul class="error" id="error"></ul> 
+
+        </div>
+        <input type="submit" class="btn-reg" value="Registrarce">
+    </form>
+</div>
+
+    <script src="js/aprendiendo.js"></script>
+    
+</body>
+</html>

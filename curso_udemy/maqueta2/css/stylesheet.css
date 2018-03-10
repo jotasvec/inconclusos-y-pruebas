@@ -1,0 +1,228 @@
+*{
+    box-sizing: border-box;
+    -moz-box-sizing:border-box; 
+    -webkit-box-sizing:border-box; 
+}
+
+body{
+    background: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+.container{
+    width: 90%;
+    max-width: 1000px;
+    /* background: #ccc; */
+    margin: auto;
+    overflow: hidden;
+}
+
+/* HEADER */
+
+header{
+    background: url("../img/nI0yPE.jpg") no-repeat center;
+    max-height: 600px;
+}
+
+header .menu{
+    margin: 40px 0;
+    text-align: right;
+}
+header .menu a{
+    margin: 0 20px;
+    padding: 10px;
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    font-size: 1em;
+}
+
+header .menu a:hover{
+    border-bottom: 2px solid #fff;
+    
+} 
+
+header .container-text{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 190px 0;
+}
+
+header .container-text .texto{ 
+    border: 2px rgba(255, 255, 255, .7) solid;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    padding: 40px;
+}
+
+header .container-text .texto h1,
+header .container-text .texto h2{ 
+    font-weight: 300;
+    margin: 0;
+}
+
+header .container-text .texto .myname{
+    font-weight: 400;
+    margin-bottom: 10px;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+header .container-text .texto .myprofetion{
+    font-size: 25px;
+    line-height: 25px;
+}
+
+/* ACERCA DE / RESUME */
+
+.main .container{
+    overflow: visible;
+}
+
+.main .resume{
+    text-align: center;
+}
+
+.main .resume .photo{
+    margin-top: -100px;
+}
+
+.main .resume .photo img{
+    height: 200px;
+    border-radius: 100%;
+    border: 5px solid rgba(255, 255, 255, .7);
+}
+/* .main .resume .texto  */
+.title{
+    font-size: 2em;
+    line-height: 2em;
+    font-weight: 400;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #c4e78c;
+}
+
+.main .resume .texto{
+    color: #5a5a5a;
+    font-weight: 600;
+    font-size: 1em;
+    line-height: 30px;
+    width: 80%;
+    margin: 40px auto;
+}
+
+/* TRABAJOS */
+.trabajos{
+    background: #f2f2f2;
+    padding: 40px 0;
+}
+
+.trabajos .container{
+    overflow: hidden;
+}
+
+/* .trabajos .container .title{} */
+
+.trabajos .container .container-works{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.trabajos .container .container-works .spc-work{
+    width: 25%;
+}
+
+.trabajos .container .container-works .spc-work .thumb{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.trabajos .container .container-works .spc-work .thumb img{
+    width: 100%;
+    vertical-align: top;
+}
+
+.trabajos .container .container-works .spc-work .description{
+    text-align: center;
+}
+
+.trabajos .container .container-works .spc-work .description .name{
+    color: cornflowerblue;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.trabajos .container .container-works .spc-work .description .category{
+    color: mediumseagreen;
+}
+
+
+/* FOOTER */
+
+footer .contacto{
+    padding: 60px 0;
+}
+
+footer .contacto .formulario{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .contacto .formulario input[type="text"],
+footer .contacto .formulario input[type="email"],
+footer .contacto .formulario textarea{
+    border: 2px solid #c4c4c4;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 20px;
+    color: #a4a4a4;
+}
+
+footer .contacto .formulario input[type="text"],
+footer .contacto .formulario input[type="email"]{
+    width: 48%;
+    margin-bottom: 15px;
+}
+
+footer .contacto .formulario textarea{
+    width: 100%;
+    height: 100px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    max-height: 300px;
+    margin-bottom: 15px;
+}
+
+footer .contacto .formulario .btn-sbmt{
+    margin: auto;
+    background: #5d80b6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 40px;
+    cursor: pointer;
+}
+
+footer .contacto .formulario .btn-sbmt:before{
+    background: #628378;
+    font-family: "Font Awesome 5" solid;
+    content: "\f07a";
+    position: absolute;
+    top: 11px;
+    left: -30px;
+    transition: all 200ms ease;
+}
+
+footer .contacto .formulario .btn-sbmt:hover:before{
+    left: 7px;
+}
